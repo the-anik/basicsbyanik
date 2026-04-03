@@ -1,0 +1,2306 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light" style=""><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>কম্পিউটার ও ইন্টারনেট বেসিকস - Ultimate Guide by Anik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --phase1: #2196f3;
+        --phase2: #4caf50;
+        --phase3: #ff9800;
+        --phase4: #e91e63;
+        --phase5: #9c27b0;
+        --phase6: #00bcd4;
+        --phase7: #ff5722;
+        --advanced: #1a237e;
+        --bg: #f4f6fb;
+        --card: #ffffff;
+        --text: #2d3748;
+        --header-gradient-start: #1a237e;
+        --header-gradient-end: #6a1b9a;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Inter', 'Hind Siliguri', sans-serif;
+        background-color: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+      /* Sidebar Navigation */
+      .sidebar {
+        width: 270px;
+        height: 100vh;
+        background-color: #fff;
+        position: fixed;
+        left: 0;
+        top: 0;
+        overflow-y: auto;
+        border-right: 1px solid #e2e8f0;
+        z-index: 1000;
+        padding-bottom: 2rem;
+      }
+
+      .logo-area {
+        padding: 1.5rem;
+        text-align: center;
+        border-bottom: 1px solid #f0f0f0;
+        background: linear-gradient(135deg, #f8f9fa, #fff);
+      }
+
+      .logo-icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      .logo-text {
+        font-weight: 700;
+        color: var(--advanced);
+        font-size: 1.1rem;
+      }
+
+      .nav-group {
+        padding: 1rem 0;
+      }
+
+      .nav-header {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #718096;
+        letter-spacing: 0.05em;
+        margin-top: 1rem;
+      }
+
+      .nav-item {
+        display: block;
+        padding: 0.6rem 1.5rem;
+        color: var(--text);
+        text-decoration: none;
+        font-size: 0.95rem;
+        border-left: 3px solid transparent;
+        transition: all 0.2s;
+      }
+
+      .nav-item:hover {
+        background-color: #f7fafc;
+        color: var(--advanced);
+        border-left-color: var(--advanced);
+      }
+
+      /* Main Content Area */
+      .main-content {
+        margin-left: 270px;
+        min-height: 100vh;
+      }
+
+      /* Header */
+      header {
+        background: linear-gradient(135deg, var(--header-gradient-start), var(--header-gradient-end));
+        color: white;
+        padding: 4rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      header::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(
+          to right,
+          var(--phase1),
+          var(--phase2),
+          var(--phase3),
+          var(--phase4),
+          var(--phase5),
+          var(--phase6),
+          var(--phase7)
+        );
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        margin-bottom: 2rem;
+        font-weight: 300;
+      }
+
+      .stats-container {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .stat-pill {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 0.5rem 1.2rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .banner {
+        background: rgba(255, 255, 255, 0.95);
+        color: var(--advanced);
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        display: inline-block;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+      }
+
+      /* Timeline */
+      .timeline-container {
+        padding: 2rem;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        margin-bottom: 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 900;
+      }
+
+      .timeline-bar {
+        display: flex;
+        height: 12px;
+        border-radius: 6px;
+        overflow: hidden;
+        margin-bottom: 0.5rem;
+      }
+
+      .t-seg {
+        height: 100%;
+      }
+      .t-p1 {
+        width: 13.3%;
+        background: var(--phase1);
+      }
+      .t-p2 {
+        width: 13.3%;
+        background: var(--phase2);
+      }
+      .t-p3 {
+        width: 26.6%;
+        background: var(--phase3);
+      }
+      .t-p4 {
+        width: 13.3%;
+        background: var(--phase4);
+      }
+      .t-p5 {
+        width: 13.3%;
+        background: var(--phase5);
+      }
+      .t-p6 {
+        width: 13.3%;
+        background: var(--phase6);
+      }
+      .t-p7 {
+        width: 6.6%;
+        background: var(--phase7);
+      }
+
+      .timeline-labels {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.75rem;
+        color: #718096;
+        font-weight: 600;
+      }
+
+      /* Content Container */
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      /* Section Styling */
+      section {
+        margin-bottom: 4rem;
+        scroll-margin-top: 100px;
+      }
+
+      .section-header {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #e2e8f0;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        color: var(--advanced);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      /* Phase Styling */
+      .phase-block {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        margin-bottom: 2.5rem;
+        overflow: hidden;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        border-top: 5px solid transparent;
+      }
+
+      .phase-block:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .phase-header {
+        padding: 1.5rem;
+        border-bottom: 1px solid #f0f0f0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .phase-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .badges {
+        display: flex;
+        gap: 8px;
+      }
+
+      .badge {
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: white;
+      }
+
+      .phase-body {
+        padding: 1.5rem;
+      }
+
+      /* Specific Phase Colors */
+      #phase1 {
+        border-top-color: var(--phase1);
+      }
+      #phase1 .phase-title {
+        color: var(--phase1);
+      }
+      #phase1 .day-badge {
+        background: var(--phase1);
+      }
+
+      #phase2 {
+        border-top-color: var(--phase2);
+      }
+      #phase2 .phase-title {
+        color: var(--phase2);
+      }
+      #phase2 .day-badge {
+        background: var(--phase2);
+      }
+
+      #phase3 {
+        border-top-color: var(--phase3);
+      }
+      #phase3 .phase-title {
+        color: var(--phase3);
+      }
+      #phase3 .day-badge {
+        background: var(--phase3);
+      }
+
+      #phase4 {
+        border-top-color: var(--phase4);
+      }
+      #phase4 .phase-title {
+        color: var(--phase4);
+      }
+      #phase4 .day-badge {
+        background: var(--phase4);
+      }
+
+      #phase5 {
+        border-top-color: var(--phase5);
+      }
+      #phase5 .phase-title {
+        color: var(--phase5);
+      }
+      #phase5 .day-badge {
+        background: var(--phase5);
+      }
+
+      #phase6 {
+        border-top-color: var(--phase6);
+      }
+      #phase6 .phase-title {
+        color: var(--phase6);
+      }
+      #phase6 .day-badge {
+        background: var(--phase6);
+      }
+
+      #phase7 {
+        border-top-color: var(--phase7);
+      }
+      #phase7 .phase-title {
+        color: var(--phase7);
+      }
+      #phase7 .day-badge {
+        background: var(--phase7);
+      }
+
+      .advanced-card {
+        border-top-color: var(--advanced);
+      }
+      .advanced-card .phase-title {
+        color: var(--advanced);
+      }
+      .advanced-card .day-badge {
+        background: var(--advanced);
+      }
+
+      /* Components */
+      .info-box {
+        background-color: rgba(0, 0, 0, 0.03);
+        border-left: 4px solid;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .info-box ul {
+        margin: 0;
+        padding-left: 1.2rem;
+      }
+
+      .topic-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .topic-list li {
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .topic-icon {
+        margin-right: 10px;
+        min-width: 24px;
+      }
+
+      .task-list {
+        list-style: none;
+        padding: 0;
+        margin-top: 1rem;
+      }
+
+      .task-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        padding: 0.5rem;
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+      }
+
+      .checkbox {
+        width: 18px;
+        height: 18px;
+        border: 2px solid #cbd5e0;
+        border-radius: 3px;
+        margin-right: 10px;
+        display: inline-block;
+      }
+
+      .pro-tip {
+        background-color: #fffaf0;
+        border: 1px solid #fbd38d;
+        border-radius: 6px;
+        padding: 1rem;
+        margin: 1.5rem 0;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .pro-tip-icon {
+        font-size: 1.5rem;
+        margin-right: 1rem;
+        color: #d69e2e;
+      }
+
+      /* Video Cards */
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .video-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid #e2e8f0;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+        display: block;
+      }
+
+      .video-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .thumb-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        background: #000;
+      }
+
+      .thumb-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.9;
+      }
+
+      .play-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 0, 0, 0.9);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      }
+
+      .duration-badge {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+
+      .lang-badge {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .lang-bn {
+        background: #2e7d32;
+      }
+      .lang-en {
+        background: #1565c0;
+      }
+
+      .video-info {
+        padding: 1rem;
+      }
+
+      .video-title {
+        font-weight: 600;
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        height: 2.8em;
+      }
+
+      .channel-name {
+        font-size: 0.85rem;
+        color: #718096;
+        margin-bottom: 0.2rem;
+      }
+
+      .view-count {
+        font-size: 0.8rem;
+        color: #a0aec0;
+      }
+
+      /* Shortcuts Table */
+      .shortcut-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        margin-bottom: 2rem;
+      }
+
+      .shortcut-table th {
+        background: #f7fafc;
+        text-align: left;
+        padding: 1rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #4a5568;
+      }
+
+      .shortcut-table td {
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #edf2f7;
+      }
+
+      .shortcut-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      kbd {
+        background-color: #f7fafc;
+        border: 1px solid #e2e8f0;
+        border-bottom-width: 2px;
+        border-radius: 3px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        color: #2d3748;
+        font-family: monospace;
+        font-size: 0.85em;
+        font-weight: 700;
+        padding: 0.15em 0.4em;
+        white-space: nowrap;
+      }
+
+      /* Tools Grid */
+      .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .tool-card {
+        background: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        border: 1px solid #e2e8f0;
+        transition: transform 0.2s;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+
+      .tool-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--phase1);
+      }
+
+      .tool-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      /* Footer */
+      footer {
+        background: linear-gradient(to right, #1a202c, #2d3748);
+        color: white;
+        padding: 4rem 2rem;
+        text-align: center;
+        margin-top: 4rem;
+      }
+
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--advanced);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        font-size: 1.5rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.2s;
+        z-index: 999;
+      }
+
+      .back-to-top:hover {
+        transform: scale(1.1);
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .sidebar {
+          width: 220px;
+        }
+        .main-content {
+          margin-left: 220px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .sidebar {
+          position: static;
+          width: 100%;
+          height: auto;
+          overflow: visible;
+        }
+        .main-content {
+          margin-left: 0;
+        }
+        .header-title {
+          font-size: 2rem;
+        }
+        .stats-container {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+        .timeline-container {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body style="">
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+      <div class="logo-area">
+        <span class="logo-icon">🚀</span>
+        <div class="logo-text">Ultimate Guide</div>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-header">📍 রোডম্যাপ</div>
+        <a href="#phase1" class="nav-item">🟦 পর্যায় ১: কম্পিউটার বেসিক</a>
+        <a href="#phase2" class="nav-item">🟩 পর্যায় ২: Windows</a>
+        <a href="#phase3" class="nav-item">🟧 পর্যায় ৩: MS Office</a>
+        <a href="#phase4" class="nav-item">🟥 পর্যায় ৪: ইন্টারনেট</a>
+        <a href="#phase5" class="nav-item">🟪 পর্যায় ৫: নিরাপত্তা</a>
+        <a href="#phase6" class="nav-item">🟦 পর্যায় ৬: প্রজেক্ট</a>
+        <a href="#phase7" class="nav-item">🟫 পর্যায় ৭: AI</a>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-header">🚀 অ্যাডভান্সড স্কিল</div>
+        <a href="#excel-adv" class="nav-item">📊 MS Excel Advanced</a>
+        <a href="#word-adv" class="nav-item">📝 MS Word Advanced</a>
+        <a href="#powerpoint-adv" class="nav-item">📊 PowerPoint</a>
+        <a href="#canva-adv" class="nav-item">🎨 Canva Design</a>
+        <a href="#ai-adv" class="nav-item">🤖 AI Tools</a>
+        <a href="#digital-marketing" class="nav-item">📣 Digital Marketing</a>
+        <a href="#cybersecurity" class="nav-item">🔐 Cybersecurity</a>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-header">📚 রিসোর্স</div>
+        <a href="#shortcuts" class="nav-item">⌨️ শর্টকাট চিটশিট</a>
+        <a href="#tools" class="nav-item">🛠️ ফ্রি টুলস</a>
+        <a href="#tips" class="nav-item">💡 প্রো টিপস</a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Header -->
+      <header>
+        <h1>কম্পিউটার ও ইন্টারনেট বেসিকস</h1>
+        <div class="subtitle">Ultimate Guide for Jobs — by Anik</div>
+
+        <div class="stats-container">
+          <div class="stat-pill">📅 ১৫ দিনের প্ল্যান</div>
+          <div class="stat-pill">🎥 ৪০+ ভিডিও</div>
+          <div class="stat-pill">⌨️ ৫০+ শর্টকাট</div>
+          <div class="stat-pill">🛠️ ১০+ ফ্রি টুলস</div>
+          <div class="stat-pill">📚 ৮টি স্কিল সেকশন</div>
+        </div>
+
+        <div class="banner">বেসিক থেকে অ্যাডভান্সড — চাকরির জন্য সম্পূর্ণ গাইড | প্রতিদিন ২–৩ ঘণ্টা</div>
+      </header>
+
+      <!-- Timeline -->
+      <div class="timeline-container">
+        <div class="timeline-bar">
+          <div class="t-seg t-p1"></div>
+          <div class="t-seg t-p2"></div>
+          <div class="t-seg t-p3"></div>
+          <div class="t-seg t-p4"></div>
+          <div class="t-seg t-p5"></div>
+          <div class="t-seg t-p6"></div>
+          <div class="t-seg t-p7"></div>
+        </div>
+        <div class="timeline-labels">
+          <span>Phase 1</span>
+          <span>Phase 2</span>
+          <span>Phase 3</span>
+          <span>Phase 4</span>
+          <span>Phase 5</span>
+          <span>Phase 6</span>
+          <span>AI</span>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Section 1: Roadmap -->
+        <section id="roadmap">
+          <div class="section-header">
+            <h2 class="section-title">🗺️ ১৫ দিনের রোডম্যাপ</h2>
+          </div>
+
+          <!-- Phase 1 -->
+          <div id="phase1" class="phase-block">
+            <div class="phase-header">
+              <h3 class="phase-title">পর্যায় ১ — কম্পিউটারের প্রাথমিক ধারণা</h3>
+              <div class="badges">
+                <span class="badge day-badge">দিন ১–২</span>
+                <span class="badge" style="background: #718096; color: gold">⭐☆☆☆☆</span>
+              </div>
+            </div>
+            <div class="phase-body">
+              <div class="info-box" style="background-color: #e3f2fd; border-color: var(--phase1)">
+                <strong>✅ এই পর্যায় শেষে আপনি পারবেন:</strong>
+                <ul>
+                  <li>কম্পিউটারের যন্ত্রাংশ চিনতে</li>
+                  <li>Windows চালু ও বন্ধ করতে</li>
+                  <li>ফাইল তৈরি, কপি, পেস্ট ও ডিলিট করতে</li>
+                  <li>USB/Pendrive সংযোগ করতে</li>
+                </ul>
+              </div>
+
+              <ul class="topic-list">
+                <li>
+                  <span class="topic-icon">🖥️</span> কম্পিউটার হার্ডওয়্যার: CPU (প্রসেসর), RAM (মেমোরি), HDD/SSD
+                  (স্টোরেজ), Monitor, Keyboard, Mouse
+                </li>
+                <li>
+                  <span class="topic-icon">💡</span> <strong>টিপ</strong>: CPU = মানুষের মস্তিষ্ক, RAM = কাজের টেবিল,
+                  HDD = ড্রয়ার
+                </li>
+                <li><span class="topic-icon">🪟</span> অপারেটিং সিস্টেম (Windows 10/11) পরিচিতি</li>
+                <li><span class="topic-icon">📁</span> ফোল্ডার তৈরি, ফাইল কপি/পেস্ট/ডিলিট/রিনেম</li>
+                <li><span class="topic-icon">💾</span> Pendrive/USB ব্যবহার ও নিরাপদে বের করা</li>
+              </ul>
+
+              <ul class="task-list">
+                <li class="task-item">
+                  <span class="checkbox"></span> ১. কম্পিউটার চালু করুন এবং Desktop চেনার চেষ্টা করুন
+                </li>
+                <li class="task-item"><span class="checkbox"></span> ২. My Computer/This PC খুলে হার্ড ড্রাইভ দেখুন</li>
+                <li class="task-item"><span class="checkbox"></span> ৩. Desktop-এ একটি নতুন ফোল্ডার তৈরি করুন</li>
+                <li class="task-item"><span class="checkbox"></span> ৪. একটি ফাইল কপি করে অন্য ফোল্ডারে পেস্ট করুন</li>
+                <li class="task-item">
+                  <span class="checkbox"></span> ৫. USB/Pendrive সংযোগ করুন এবং ফাইল স্থানান্তর করুন
+                </li>
+              </ul>
+
+              <div class="pro-tip">
+                <div class="pro-tip-icon">⚡</div>
+                <div>
+                  <strong>Pro Tip:</strong> কম্পিউটার চালু করার পর সবকিছু লোড হতে একটু সময় লাগে। তাড়া না করে অপেক্ষা
+                  করুন। Restart দিলে অনেক সমস্যা সমাধান হয়!
+                </div>
+              </div>
+
+              <div class="video-grid">
+                <a href="https://www.youtube.com/watch?v=K3F580_nxqY" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/K3F580_nxqY/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-bn">🇧🇩 বাংলা</div>
+                    <div class="duration-badge">10:03</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Basic Computer Course For Beginners</div>
+                    <div class="channel-name">Basic IT Academy</div>
+                    <div class="view-count">5.2M Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=3bcdEyD3brg" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/3bcdEyD3brg/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-bn">🇧🇩 বাংলা</div>
+                    <div class="duration-badge">24:09</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Easy way to learn computer — Basic Knowledge</div>
+                    <div class="channel-name">iT24 Bangla</div>
+                    <div class="view-count">56K Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=Smv2U9dSuWE" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/Smv2U9dSuWE/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-bn">🇧🇩 বাংলা</div>
+                    <div class="duration-badge">4:07:46</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Computer Basics A to Z with ChatGPT (AI)</div>
+                    <div class="channel-name">Ali Hossain</div>
+                    <div class="view-count">619K Views</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase 2 -->
+          <div id="phase2" class="phase-block">
+            <div class="phase-header">
+              <h3 class="phase-title">পর্যায় ২ — Windows ও ফাইল ম্যানেজমেন্ট</h3>
+              <div class="badges">
+                <span class="badge day-badge">দিন ৩–৪</span>
+                <span class="badge" style="background: #718096; color: gold">⭐⭐☆☆☆</span>
+              </div>
+            </div>
+            <div class="phase-body">
+              <div class="info-box" style="background-color: #e8f5e9; border-color: var(--phase2)">
+                <strong>✅ এই পর্যায় শেষে আপনি পারবেন:</strong>
+                <ul>
+                  <li>File Explorer ব্যবহার করতে</li>
+                  <li>ফাইল এক্সটেনশন বুঝতে</li>
+                  <li>স্ক্রিনশট নিতে</li>
+                  <li>Windows সার্চ ব্যবহার করতে</li>
+                </ul>
+              </div>
+
+              <ul class="topic-list">
+                <li><span class="topic-icon">🖥️</span> Windows Desktop, Taskbar, Start Menu, Notification Area</li>
+                <li><span class="topic-icon">📂</span> File Explorer — ফাইল/ফোল্ডার ম্যানেজমেন্ট, View modes</li>
+                <li>
+                  <span class="topic-icon">📄</span> File Extensions বোঝা: .docx (Word), .xlsx (Excel), .pdf, .jpg, .zip
+                </li>
+                <li><span class="topic-icon">📸</span> Screenshot: Win+Shift+S (Snipping Tool), PrintScreen</li>
+                <li><span class="topic-icon">🔍</span> Windows Search (Win + S) — দ্রুত যেকোনো ফাইল খোঁজা</li>
+              </ul>
+
+              <ul class="task-list">
+                <li class="task-item">
+                  <span class="checkbox"></span> ১. File Explorer খুলুন (Win+E) এবং সব ড্রাইভ দেখুন
+                </li>
+                <li class="task-item">
+                  <span class="checkbox"></span> ২. ৫টি আলাদা ফোল্ডার তৈরি করুন (Work, Study, Photos, Videos, Documents)
+                </li>
+                <li class="task-item"><span class="checkbox"></span> ৩. Win+Shift+S দিয়ে স্ক্রিনশট নিন ও সেভ করুন</li>
+                <li class="task-item">
+                  <span class="checkbox"></span> ৪. Windows Search দিয়ে একটি ফাইল খুঁজে বের করুন
+                </li>
+              </ul>
+
+              <div class="pro-tip">
+                <div class="pro-tip-icon">⚡</div>
+                <div>
+                  <strong>Pro Tip:</strong> ফাইল Extensions দেখতে না পেলে: File Explorer → View → Show → File name
+                  extensions চেক করুন।
+                </div>
+              </div>
+
+              <div class="video-grid">
+                <a href="https://www.youtube.com/watch?v=d_Y7o8Db7H8" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/d_Y7o8Db7H8/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-en">🇺🇸 English</div>
+                    <div class="duration-badge">10:14</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">How To Use Windows 11! Complete Beginners Guide</div>
+                    <div class="channel-name">Simple Alpaca</div>
+                    <div class="view-count">178K Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=UKn-r3X2CLk" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/UKn-r3X2CLk/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-en">🇺🇸 English</div>
+                    <div class="duration-badge">1:56:58</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Windows 11 Full Tutorial — 2 Hour Course</div>
+                    <div class="channel-name">Kaceli TechTraining</div>
+                    <div class="view-count">930K Views</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase 3 -->
+          <div id="phase3" class="phase-block">
+            <div class="phase-header">
+              <h3 class="phase-title">পর্যায় ৩ — Microsoft Office / Google Workspace</h3>
+              <div class="badges">
+                <span class="badge day-badge">দিন ৫–৮</span>
+                <span class="badge" style="background: #718096; color: gold">⭐⭐⭐☆☆</span>
+              </div>
+            </div>
+            <div class="phase-body">
+              <div class="info-box" style="background-color: #fff3e0; border-color: var(--phase3)">
+                <strong>✅ এই পর্যায় শেষে আপনি পারবেন:</strong>
+                <ul>
+                  <li>MS Word-এ পেশাদার ডকুমেন্ট তৈরি করতে</li>
+                  <li>Excel-এ ডেটা সাজাতে ও ফর্মুলা ব্যবহার করতে</li>
+                  <li>Google Docs/Sheets অনলাইনে ব্যবহার করতে</li>
+                </ul>
+              </div>
+
+              <div style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                  gap: 1rem;
+                  margin-bottom: 1.5rem;
+                ">
+                <div style="background: #fff8e1; padding: 1rem; border-radius: 6px; border: 1px solid #ffe0b2">
+                  <h4 style="margin-bottom: 0.5rem; color: #f57c00">MS Word (৫ম দিন)</h4>
+                  <ul style="font-size: 0.9rem; padding-left: 1.2rem; margin: 0">
+                    <li>Avro দিয়ে বাংলা টাইপিং</li>
+                    <li>Document ফরম্যাটিং (Bold, Italic)</li>
+                    <li>Font, Size, Color, Highlight</li>
+                    <li>Paragraph alignment</li>
+                    <li>Save as .docx/.pdf</li>
+                  </ul>
+                </div>
+                <div style="background: #f1f8e9; padding: 1rem; border-radius: 6px; border: 1px solid #c8e6c9">
+                  <h4 style="margin-bottom: 0.5rem; color: #388e3c">MS Excel (৬ষ্ঠ দিন)</h4>
+                  <ul style="font-size: 0.9rem; padding-left: 1.2rem; margin: 0">
+                    <li>Cell, Row, Column বোঝা</li>
+                    <li>Basic ফর্মুলা: SUM, AVERAGE</li>
+                    <li>AutoFill ব্যবহার</li>
+                    <li>Chart (Bar, Pie) তৈরি</li>
+                  </ul>
+                </div>
+                <div style="background: #e3f2fd; padding: 1rem; border-radius: 6px; border: 1px solid #bbdefb">
+                  <h4 style="margin-bottom: 0.5rem; color: #1976d2">PowerPoint (৭ম দিন)</h4>
+                  <ul style="font-size: 0.9rem; padding-left: 1.2rem; margin: 0">
+                    <li>Slide Design</li>
+                    <li>Transitions &amp; Animations</li>
+                    <li>Presentation Mode</li>
+                    <li>Export as PDF/Video</li>
+                  </ul>
+                </div>
+                <div style="background: #f3e5f5; padding: 1rem; border-radius: 6px; border: 1px solid #e1bee7">
+                  <h4 style="margin-bottom: 0.5rem; color: #7b1fa2">Google Workspace (৮ম দিন)</h4>
+                  <ul style="font-size: 0.9rem; padding-left: 1.2rem; margin: 0">
+                    <li>Docs &amp; Sheets</li>
+                    <li>Real-time Collaboration</li>
+                    <li>Share &amp; Permissions</li>
+                  </ul>
+                </div>
+              </div>
+
+              <ul class="task-list">
+                <li class="task-item">
+                  <span class="checkbox"></span> ১. Avro Keyboard ইনস্টল করুন এবং বাংলা টাইপ করুন
+                </li>
+                <li class="task-item">
+                  <span class="checkbox"></span> ২. Word-এ একটি ১ পৃষ্ঠার চিঠি তৈরি করুন (ফরম্যাটিংসহ)
+                </li>
+                <li class="task-item">
+                  <span class="checkbox"></span> ৩. Excel-এ ১০ জনের নাম ও নম্বর দিয়ে SUM ও AVERAGE বের করুন
+                </li>
+                <li class="task-item">
+                  <span class="checkbox"></span> ৪. PowerPoint-এ ৫ স্লাইডের একটি প্রেজেন্টেশন তৈরি করুন
+                </li>
+                <li class="task-item">
+                  <span class="checkbox"></span> ৫. Google Docs-এ একটি ডকুমেন্ট তৈরি করে শেয়ার করুন
+                </li>
+              </ul>
+
+              <div class="pro-tip">
+                <div class="pro-tip-icon">⚡</div>
+                <div>
+                  <strong>Pro Tip:</strong> MS Word vs Google Docs: অফিসে কাজ করলে Word, Team Collaboration-এ Google
+                  Docs ভালো। উভয়ই শিখুন!
+                </div>
+              </div>
+
+              <div class="video-grid">
+                <a href="https://www.youtube.com/watch?v=QXu9AGTIxrM" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/QXu9AGTIxrM/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-bn">🇧🇩 বাংলা</div>
+                    <div class="duration-badge">30:30</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Microsoft Word in Just 30 minutes — Complete Tutorial</div>
+                    <div class="channel-name">Rayhan Tanjim</div>
+                    <div class="view-count">2.8M Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=8gqRZM_jgVc" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/8gqRZM_jgVc/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-bn">🇧🇩 বাংলা</div>
+                    <div class="duration-badge">1:13:45</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">MS Word A to Z Bangla Tutorial</div>
+                    <div class="channel-name">Basic IT Academy</div>
+                    <div class="view-count">875K Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=NIyjYutN54o" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/NIyjYutN54o/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-bn">🇧🇩 বাংলা</div>
+                    <div class="duration-badge">14:33</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Excel Bangla Tutorial for Beginners</div>
+                    <div class="channel-name">Rayhan Tanjim</div>
+                    <div class="view-count">1.2M Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=tvph9RuZvUg" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/tvph9RuZvUg/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-bn">🇧🇩 বাংলা</div>
+                    <div class="duration-badge">54:16</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Excel Full Bangla Tutorial</div>
+                    <div class="channel-name">Rayhan Tanjim</div>
+                    <div class="view-count">2.9M Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=h9UrHBzw0H8" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/h9UrHBzw0H8/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-en">🇺🇸 English</div>
+                    <div class="duration-badge">1:18:24</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Google Drive for Beginners — Docs, Sheets, Forms</div>
+                    <div class="channel-name">Tech Teachers</div>
+                    <div class="view-count">491K Views</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase 4 -->
+          <div id="phase4" class="phase-block">
+            <div class="phase-header">
+              <h3 class="phase-title">পর্যায় ৪ — ইন্টারনেট ও ইমেইল</h3>
+              <div class="badges">
+                <span class="badge day-badge">দিন ৯–১০</span>
+                <span class="badge" style="background: #718096; color: gold">⭐⭐☆☆☆</span>
+              </div>
+            </div>
+            <div class="phase-body">
+              <div class="info-box" style="background-color: #fce4ec; border-color: var(--phase4)">
+                <strong>✅ এই পর্যায় শেষে আপনি পারবেন:</strong>
+                <ul>
+                  <li>Professional Gmail ব্যবহার করতে</li>
+                  <li>Google Drive-এ ফাইল রাখতে ও শেয়ার করতে</li>
+                  <li>Google Meet-এ ভিডিও কল করতে</li>
+                  <li>স্মার্টভাবে Google Search করতে</li>
+                </ul>
+              </div>
+
+              <ul class="topic-list">
+                <li><span class="topic-icon">🌐</span> Browser (Chrome/Edge/Firefox) — Bookmarks, Tabs, History</li>
+                <li><span class="topic-icon">🔍</span> Google Search Tips — Quotes "", site:, filetype:</li>
+                <li><span class="topic-icon">📧</span> Gmail — Account তৈরি, Professional নাম রাখা, ইমেইল পাঠানো</li>
+                <li><span class="topic-icon">📎</span> Attachments যোগ করা, Reply, Forward, CC, BCC</li>
+                <li><span class="topic-icon">☁️</span> Google Drive — আপলোড, ফোল্ডার, শেয়ার, Download</li>
+                <li><span class="topic-icon">📹</span> Google Meet / Zoom বেসিকস — Meeting শুরু করা</li>
+              </ul>
+
+              <ul class="task-list">
+                <li class="task-item">
+                  <span class="checkbox"></span> ১. একটি Professional Gmail তৈরি করুন (<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d9bfb0abaaadb7b8b4bcf7b5b8aaadb7b8b4bc99beb4b8b0b5f7bab6b4">[email&#160;protected]</a>)
+                </li>
+                <li class="task-item">
+                  <span class="checkbox"></span> ২. একটি Formal ইমেইল লিখে পাঠান (Subject, Body, Sign-off সহ)
+                </li>
+                <li class="task-item">
+                  <span class="checkbox"></span> ৩. Google Drive-এ একটি ফোল্ডার তৈরি করে ফাইল আপলোড করুন
+                </li>
+                <li class="task-item"><span class="checkbox"></span> ৪. Google Drive লিংক শেয়ার করুন (View-only)</li>
+              </ul>
+
+              <div class="pro-tip">
+                <div class="pro-tip-icon">⚡</div>
+                <div>
+                  <strong>Pro Tip:</strong> Professional Gmail: firstname.lastname বা <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6c020d01094215090d1e2c0b010d0500420f0301">[email&#160;protected]</a> ব্যবহার করুন।
+                  কখনো 'coolboy99' বা 'princess2000' দিয়ে Job Application করবেন না!
+                </div>
+              </div>
+
+              <div class="video-grid">
+                <a href="https://www.youtube.com/watch?v=8iqFDCfAD8Q" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/8iqFDCfAD8Q/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-bn">🇧🇩 বাংলা</div>
+                    <div class="duration-badge">22:00</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">জিমেইল আইডি খোলার সঠিক নিয়ম</div>
+                    <div class="channel-name">Basic IT Academy</div>
+                    <div class="view-count">137K Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=RL4BANRjRR8" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/RL4BANRjRR8/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-bn">🇧🇩 বাংলা</div>
+                    <div class="duration-badge">29:10</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">গুগল ড্রাইভ কী? কিভাবে ব্যবহার করব?</div>
+                    <div class="channel-name">Basic IT Academy</div>
+                    <div class="view-count">102K Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=CtRgwJaW2N4" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/CtRgwJaW2N4/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-en">🇺🇸 English</div>
+                    <div class="duration-badge">11:36</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Gmail Basics Tutorial</div>
+                    <div class="channel-name">Kevin Stratvert</div>
+                    <div class="view-count">764K Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=gdrxAoqfvbA" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/gdrxAoqfvbA/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-en">🇺🇸 English</div>
+                    <div class="duration-badge">16:49</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">How to use Google Drive</div>
+                    <div class="channel-name">Kevin Stratvert</div>
+                    <div class="view-count">2M Views</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase 5 -->
+          <div id="phase5" class="phase-block">
+            <div class="phase-header">
+              <h3 class="phase-title">পর্যায় ৫ — অনলাইন নিরাপত্তা ও টাইপিং</h3>
+              <div class="badges">
+                <span class="badge day-badge">দিন ১১–১২</span>
+                <span class="badge" style="background: #718096; color: gold">⭐⭐☆☆☆</span>
+              </div>
+            </div>
+            <div class="phase-body">
+              <div class="info-box" style="background-color: #f3e5f5; border-color: var(--phase5)">
+                <strong>✅ এই পর্যায় শেষে আপনি পারবেন:</strong>
+                <ul>
+                  <li>শক্তিশালী পাসওয়ার্ড তৈরি করতে</li>
+                  <li>Phishing ও Scam চিনতে</li>
+                  <li>2FA সেট করতে</li>
+                  <li>দ্রুত টাইপিং করতে</li>
+                </ul>
+              </div>
+
+              <ul class="topic-list">
+                <li>
+                  <span class="topic-icon">🔒</span> Strong Password: কমপক্ষে ১২ অক্ষর, বড়-ছোট হাতের অক্ষর+সংখ্যা+চিহ্ন
+                </li>
+                <li>
+                  <span class="topic-icon">🔑</span> Password Manager: Bitwarden (ফ্রি) — সব পাসওয়ার্ড নিরাপদে রাখুন
+                </li>
+                <li>
+                  <span class="topic-icon">📱</span> Two-Factor Authentication (2FA): Google Authenticator বা SMS OTP
+                </li>
+                <li><span class="topic-icon">🛡️</span> Safe Browsing: HTTPS চেক করুন, অজানা সাইটে Click করবেন না</li>
+                <li><span class="topic-icon">⌨️</span> ইংরেজি টাইপিং: TypingClub.com থেকে শিখুন (লক্ষ্য: ৩০+ WPM)</li>
+                <li><span class="topic-icon">🖊️</span> বাংলা টাইপিং: Avro Keyboard</li>
+              </ul>
+
+              <ul class="task-list">
+                <li class="task-item">
+                  <span class="checkbox"></span> ১. আপনার Gmail-এ 2FA চালু করুন (Security → 2-Step Verification)
+                </li>
+                <li class="task-item"><span class="checkbox"></span> ২. Bitwarden.com-এ ফ্রি অ্যাকাউন্ট খুলুন</li>
+                <li class="task-item">
+                  <span class="checkbox"></span> ৩. TypingClub.com-এ রেজিস্ট্রেশন করুন ও Level 1 শেষ করুন
+                </li>
+              </ul>
+
+              <div class="pro-tip">
+                <div class="pro-tip-icon">⚡</div>
+                <div>
+                  <strong>Pro Tip:</strong> একটি Strong Password মনে রাখার সহজ উপায়: একটি বাক্য থেকে প্রথম অক্ষর নিন।
+                  যেমন: 'আমি ২০২৬ সালে ভালো চাকরি পাব!' → A2026SVcP!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase 6 -->
+          <div id="phase6" class="phase-block">
+            <div class="phase-header">
+              <h3 class="phase-title">পর্যায় ৬ — প্রজেক্ট ও বাস্তব প্রয়োগ</h3>
+              <div class="badges">
+                <span class="badge day-badge">দিন ১৩–১৪</span>
+                <span class="badge" style="background: #718096; color: gold">⭐⭐⭐☆☆</span>
+              </div>
+            </div>
+            <div class="phase-body">
+              <div class="info-box" style="background-color: #e0f7fa; border-color: var(--phase6)">
+                <strong>✅ এই পর্যায়ে আপনি বাস্তব প্রজেক্ট করবেন:</strong> ৪টি প্রজেক্ট কমপ্লিট করুন
+              </div>
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem">
+                <div style="border: 1px solid #b2ebf2; padding: 1.5rem; border-radius: 8px; text-align: center">
+                  <div style="font-size: 2rem; margin-bottom: 0.5rem">📝</div>
+                  <h4>CV/Resume</h4>
+                  <p style="font-size: 0.9rem; color: #666">Word-এ পেশাদার সিভি তৈরি করুন</p>
+                </div>
+                <div style="border: 1px solid #b2ebf2; padding: 1.5rem; border-radius: 8px; text-align: center">
+                  <div style="font-size: 2rem; margin-bottom: 0.5rem">📊</div>
+                  <h4>বাজেট শিট</h4>
+                  <p style="font-size: 0.9rem; color: #666">Excel-এ মাসিক খরচের হিসাব</p>
+                </div>
+                <div style="border: 1px solid #b2ebf2; padding: 1.5rem; border-radius: 8px; text-align: center">
+                  <div style="font-size: 2rem; margin-bottom: 0.5rem">📋</div>
+                  <h4>সার্ভে ফর্ম</h4>
+                  <p style="font-size: 0.9rem; color: #666">Google Form দিয়ে তথ্য সংগ্রহ</p>
+                </div>
+                <div style="border: 1px solid #b2ebf2; padding: 1.5rem; border-radius: 8px; text-align: center">
+                  <div style="font-size: 2rem; margin-bottom: 0.5rem">🎨</div>
+                  <h4>ডিজাইন</h4>
+                  <p style="font-size: 0.9rem; color: #666">Canva দিয়ে পোস্টার তৈরি</p>
+                </div>
+              </div>
+
+              <ul class="task-list">
+                <li class="task-item">
+                  <span class="checkbox"></span> ১. একটি প্রফেশনাল CV তৈরি করুন এবং PDF হিসেবে সেভ করুন
+                </li>
+                <li class="task-item"><span class="checkbox"></span> ২. Excel-এ ৩০ দিনের বাজেট ট্র্যাক করুন</li>
+                <li class="task-item"><span class="checkbox"></span> ৩. Google Form তৈরি করুন ও লিংক শেয়ার করুন</li>
+                <li class="task-item">
+                  <span class="checkbox"></span> ৪. Canva-এ ডিজাইন তৈরি করুন ও PNG Download করুন
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Phase 7 -->
+          <div id="phase7" class="phase-block">
+            <div class="phase-header">
+              <h3 class="phase-title">পর্যায় ৭ — AI দক্ষতা (২০২৬ সালের Must-Have!)</h3>
+              <div class="badges">
+                <span class="badge day-badge">দিন ১৫</span>
+                <span class="badge" style="background: #718096; color: gold">⭐⭐⭐☆☆</span>
+              </div>
+            </div>
+            <div class="phase-body">
+              <div class="info-box" style="background-color: #fbe9e7; border-color: var(--phase7)">
+                <strong>✅ এই পর্যায় শেষে আপনি পারবেন:</strong>
+                <ul>
+                  <li>ChatGPT দিয়ে ইমেইল, CV, রিপোর্ট লিখতে</li>
+                  <li>AI দিয়ে অনুবাদ ও সারাংশ করতে</li>
+                  <li>Canva AI দিয়ে ডিজাইন তৈরি করতে</li>
+                </ul>
+              </div>
+
+              <ul class="topic-list">
+                <li><span class="topic-icon">🤖</span> AI কী? — Machine Learning, Chatbot সহজ ভাষায়</li>
+                <li><span class="topic-icon">💬</span> ChatGPT ব্যবহার: chat.openai.com — Account তৈরি, প্রশ্ন করা</li>
+                <li><span class="topic-icon">🧠</span> Google Gemini: gemini.google.com</li>
+                <li><span class="topic-icon">✍️</span> AI দিয়ে কাজ: ইমেইল লেখা, অনুবাদ, সারাংশ তৈরি</li>
+                <li><span class="topic-icon">🎨</span> Canva AI: Magic Design, Text to Image</li>
+              </ul>
+
+              <div class="pro-tip">
+                <div class="pro-tip-icon">⚡</div>
+                <div>
+                  <strong>Pro Tip:</strong> AI আপনার কাজ নেবে না — যে AI ব্যবহার করতে পারে, সে নেবে। প্রতিটি কাজে AI
+                  সহকারী হিসেবে ব্যবহার করুন।
+                </div>
+              </div>
+
+              <div class="video-grid">
+                <a href="https://www.youtube.com/watch?v=bG6dUjPXxe4" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/bG6dUjPXxe4/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-bn">🇧🇩 বাংলা</div>
+                    <div class="duration-badge">22:19</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">ChatGPT Full Bangla Tutorial — Complete Course</div>
+                    <div class="channel-name">Rayhan Tanjim</div>
+                    <div class="view-count">250K Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=PCtdxSPMmXU" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/PCtdxSPMmXU/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-bn">🇧🇩 বাংলা</div>
+                    <div class="duration-badge">28:18</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">How to use ChatGPT For Beginners — Bangla Tutorial</div>
+                    <div class="channel-name">Basic IT Academy</div>
+                    <div class="view-count">172K Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=Gaf_jCnA6mc" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/Gaf_jCnA6mc/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-en">🇺🇸 English</div>
+                    <div class="duration-badge">27:51</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">ChatGPT Tutorial for Beginners</div>
+                    <div class="channel-name">Charlie Chang</div>
+                    <div class="view-count">4.6M Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=LrVw2LtJsYw" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/LrVw2LtJsYw/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-en">🇺🇸 English</div>
+                    <div class="duration-badge">2:52:10</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Artificial Intelligence Full Course (Free)</div>
+                    <div class="channel-name">The iScale</div>
+                    <div class="view-count">1.1M Views</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2: Advanced Skills -->
+        <section id="advanced">
+          <div class="section-header">
+            <h2 class="section-title">💻 অ্যাডভান্সড স্কিল — চাকরির বাজার ২০২৬</h2>
+          </div>
+
+          <div style="
+              background: linear-gradient(to right, #e8eaf6, #fff);
+              padding: 1.5rem;
+              border-radius: 8px;
+              border-left: 5px solid var(--advanced);
+              margin-bottom: 2rem;
+            ">
+            <p style="margin: 0; font-weight: 600; color: var(--advanced)">
+              গবেষণা বলছে, ২০২৬ সালে বাংলাদেশের চাকরির বাজারে নিচের স্কিলগুলো সবচেয়ে বেশি চাহিদা সম্পন্ন।
+            </p>
+          </div>
+
+          <div id="excel-adv" class="phase-block advanced-card">
+            <div class="phase-header">
+              <h3 class="phase-title">📊 MS Excel — Intermediate to Advanced</h3>
+              <div class="badges"><span class="badge" style="background: var(--advanced)">⭐⭐⭐⭐⭐ Demand</span></div>
+            </div>
+            <div class="phase-body">
+              <div class="info-box" style="background-color: #f3f4f6">
+                <strong>Why Learn:</strong> Excel জানা থাকলে Data Entry, Accounting, HR, Admin যেকোনো অফিস চাকরিতে অনেক
+                এগিয়ে থাকবেন।
+              </div>
+
+              <div style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                  gap: 1rem;
+                  margin-bottom: 1.5rem;
+                ">
+                <div>
+                  <h4 style="color: #2e7d32">Beginner</h4>
+                  <ul style="font-size: 0.9rem; padding-left: 1.2rem">
+                    <li>Basic formulas</li>
+                    <li>Cell formatting</li>
+                    <li>Charts</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 style="color: #1565c0">Intermediate</h4>
+                  <ul style="font-size: 0.9rem; padding-left: 1.2rem">
+                    <li>VLOOKUP/XLOOKUP</li>
+                    <li>IF/SUMIF/COUNTIF</li>
+                    <li>Pivot Tables</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 style="color: #c62828">Advanced</h4>
+                  <ul style="font-size: 0.9rem; padding-left: 1.2rem">
+                    <li>Power Query</li>
+                    <li>Macros Basics</li>
+                    <li>Dashboard</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="video-grid">
+                <a href="https://www.youtube.com/watch?v=tvph9RuZvUg" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/tvph9RuZvUg/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-bn">🇧🇩 বাংলা</div>
+                    <div class="duration-badge">54:16</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Excel Full Bangla Tutorial — Complete Course</div>
+                    <div class="channel-name">Rayhan Tanjim</div>
+                    <div class="view-count">2.9M Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=wbJcJCkBcMg" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/wbJcJCkBcMg/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-en">🇺🇸 English</div>
+                    <div class="duration-badge">54:55</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Excel for Beginners — The Complete Course</div>
+                    <div class="channel-name">Tech Teachers</div>
+                    <div class="view-count">15.6M Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=LgXzzu68j7M" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/LgXzzu68j7M/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-en">🇺🇸 English</div>
+                    <div class="duration-badge">16:17</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Excel Tutorial for Beginners</div>
+                    <div class="channel-name">Kevin Stratvert</div>
+                    <div class="view-count">6.2M Views</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Word Advanced -->
+          <div id="word-adv" class="phase-block advanced-card">
+            <div class="phase-header">
+              <h3 class="phase-title">📝 MS Word — Advanced Skills</h3>
+              <div class="badges"><span class="badge" style="background: var(--advanced)">⭐⭐⭐⭐ Demand</span></div>
+            </div>
+            <div class="phase-body">
+              <div class="info-box" style="background-color: #e8eaf6">
+                <strong>Why Learn:</strong> Word Advanced স্কিল দিয়ে Professional CV, Reports, Mail Merge এবং পেশাদার ডকুমেন্ট তৈরি করতে পারবেন।
+              </div>
+              <ul class="topic-list">
+                <li><span class="topic-icon">✉️</span> Mail Merge — একসাথে ১০০টি কাস্টম চিঠি/সার্টিফিকেট তৈরি</li>
+                <li><span class="topic-icon">📑</span> Table of Contents — স্বয়ংক্রিয় সূচিপত্র তৈরি</li>
+                <li><span class="topic-icon">✏️</span> Track Changes ও Comments — টিম Collaboration</li>
+                <li><span class="topic-icon">📄</span> Styles &amp; Headings — Professional Formatting</li>
+                <li><span class="topic-icon">🔢</span> Headers, Footers ও Page Numbering</li>
+                <li><span class="topic-icon">📋</span> Templates তৈরি ও ব্যবহার</li>
+                <li><span class="topic-icon">🗂️</span> Bibliography ও References</li>
+                <li><span class="topic-icon">👔</span> Professional CV/Resume Design</li>
+              </ul>
+              <div class="video-grid">
+                <a href="https://www.youtube.com/watch?v=8gqRZM_jgVc" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/8gqRZM_jgVc/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-bn">🇧🇩 বাংলা</div>
+                    <div class="duration-badge">1:13:45</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">MS Word A to Z Bangla Tutorial — Complete Course</div>
+                    <div class="channel-name">Basic IT Academy</div>
+                    <div class="view-count">875K Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=2MCmnr2L50o" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/2MCmnr2L50o/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-en">🇺🇸 English</div>
+                    <div class="duration-badge">43:16</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Microsoft Word for Beginners — Complete Course</div>
+                    <div class="channel-name">Tech Teachers</div>
+                    <div class="view-count">4.3M Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=QXu9AGTIxrM" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/QXu9AGTIxrM/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-bn">🇧🇩 বাংলা</div>
+                    <div class="duration-badge">30:30</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Microsoft Word in Just 30 minutes — Complete Tutorial</div>
+                    <div class="channel-name">Rayhan Tanjim</div>
+                    <div class="view-count">2.8M Views</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PowerPoint Advanced -->
+          <div id="powerpoint-adv" class="phase-block advanced-card">
+            <div class="phase-header">
+              <h3 class="phase-title">📊 MS PowerPoint — Professional Presentations</h3>
+              <div class="badges"><span class="badge" style="background: var(--advanced)">⭐⭐⭐⭐ Demand</span></div>
+            </div>
+            <div class="phase-body">
+              <div class="info-box" style="background-color: #fce4ec">
+                <strong>Why Learn:</strong> যেকোনো Interview, Business Meeting, বা Class Presentation-এ PowerPoint অপরিহার্য। সুন্দর Presentation আপনাকে আলাদা করে তোলে।
+              </div>
+              <ul class="topic-list">
+                <li><span class="topic-icon">🎨</span> Slide Design ও Professional Themes</li>
+                <li><span class="topic-icon">✨</span> Transitions ও Animations (প্রভাবশালী কিন্তু কম ব্যবহার করুন)</li>
+                <li><span class="topic-icon">📊</span> Charts, SmartArt ও Tables</li>
+                <li><span class="topic-icon">🗒️</span> Speaker Notes ও Presenter View</li>
+                <li><span class="topic-icon">🖼️</span> Slide Master — সব স্লাইডে একই ডিজাইন</li>
+                <li><span class="topic-icon">📤</span> PDF ও Video হিসেবে Export করা</li>
+                <li><span class="topic-icon">💡</span> <strong>10-20-30 Rule:</strong> ১০ স্লাইড, ২০ মিনিট, ৩০pt ফন্ট — Guy Kawasaki</li>
+              </ul>
+              <div class="pro-tip">
+                <div class="pro-tip-icon">⚡</div>
+                <div><strong>Design Secret:</strong> ১ স্লাইডে ১টি মূল বার্তা রাখুন। বেশি Text মানে কম মনোযোগ। ছবি ও আইকন বেশি ব্যবহার করুন।</div>
+              </div>
+              <div class="video-grid">
+                <a href="https://www.youtube.com/watch?v=bcl6YoZQfDM" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/bcl6YoZQfDM/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-bn">🇧🇩 বাংলা</div>
+                    <div class="duration-badge">30:23</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Microsoft PowerPoint in Just 30 minutes</div>
+                    <div class="channel-name">Rayhan Tanjim</div>
+                    <div class="view-count">1.1M Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=fACEzzmXelY" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/fACEzzmXelY/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-en">🇺🇸 English</div>
+                    <div class="duration-badge">20:44</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">PowerPoint for Beginners — Step by Step Tutorial</div>
+                    <div class="channel-name">Presentation Process</div>
+                    <div class="view-count">5.8M Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=l5Ij7nUy9UQ" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/l5Ij7nUy9UQ/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-en">🇺🇸 English</div>
+                    <div class="duration-badge">20:28</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">PowerPoint Tutorial for Beginners</div>
+                    <div class="channel-name">Kevin Stratvert</div>
+                    <div class="view-count">3.1M Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=KqgyvGxISxk" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/KqgyvGxISxk/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-en">🇺🇸 English</div>
+                    <div class="duration-badge">52:04</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Microsoft PowerPoint for Beginners — Complete Course</div>
+                    <div class="channel-name">Tech Teachers</div>
+                    <div class="view-count">1M Views</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Canva Advanced -->
+          <div id="canva-adv" class="phase-block advanced-card">
+            <div class="phase-header">
+              <h3 class="phase-title">🎨 Canva — গ্রাফিক ডিজাইন</h3>
+              <div class="badges"><span class="badge" style="background: #e91e8c">⭐⭐⭐⭐⭐ Demand</span></div>
+            </div>
+            <div class="phase-body">
+              <div class="info-box" style="background-color: #fce4ec">
+                <strong>Why Learn:</strong> Canva ব্যবহার করে Professional Designer না হয়েও সুন্দর Design তৈরি করা যায়। Social Media, Marketing, Presentation সব কাজে লাগে।
+              </div>
+              <ul class="topic-list">
+                <li><span class="topic-icon">📱</span> Social Media Posts (Facebook, Instagram, LinkedIn)</li>
+                <li><span class="topic-icon">🎭</span> Template কাস্টমাইজেশন ও Brand Kit</li>
+                <li><span class="topic-icon">✨</span> Canva AI — Magic Design, Text to Image, Background Remove</li>
+                <li><span class="topic-icon">📄</span> Flyer, Poster, Brochure ডিজাইন</li>
+                <li><span class="topic-icon">👔</span> Professional CV/Resume তৈরি Canva-তে</li>
+                <li><span class="topic-icon">📊</span> Presentation Slides (Canva Presentation)</li>
+                <li><span class="topic-icon">🎬</span> Short Videos ও Animations তৈরি</li>
+              </ul>
+              <div class="video-grid">
+                <a href="https://www.youtube.com/watch?v=-CTQYiGtoTI" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/-CTQYiGtoTI/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-bn">🇧🇩 বাংলা</div>
+                    <div class="duration-badge">44:51</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Canva Full Bangla Tutorial 2026 — Most Updated</div>
+                    <div class="channel-name">Mastering Digital</div>
+                    <div class="view-count">390K Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=eIwRNjVF6Eg" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/eIwRNjVF6Eg/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-bn">🇧🇩 বাংলা</div>
+                    <div class="duration-badge">34:05</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">সহজ ভাষায় Canva Design A-Z Bangla Course</div>
+                    <div class="channel-name">Mastering Digital</div>
+                    <div class="view-count">373K Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=Llnmf5BXLBA" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/Llnmf5BXLBA/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-en">🇺🇸 English</div>
+                    <div class="duration-badge">1:00:00</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Canva Tutorial For Beginners — Full Course</div>
+                    <div class="channel-name">Bring Your Own Laptop</div>
+                    <div class="view-count">1.2M Views</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Tools Advanced -->
+          <div id="ai-adv" class="phase-block advanced-card">
+            <div class="phase-header">
+              <h3 class="phase-title">🤖 AI Tools — ভবিষ্যতের দক্ষতা</h3>
+              <div class="badges"><span class="badge" style="background: #ff5722">🔥 Most In-Demand</span></div>
+            </div>
+            <div class="phase-body">
+              <div class="info-box" style="background-color: #fff8e1; border-color: #ffc107">
+                <strong>⚡ AI জানাটা এখন Optional নয়, এটি Mandatory!</strong> ২০২৬ সালে AI ব্যবহার না জানলে পিছিয়ে পড়বেন।
+              </div>
+              <table style="width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05)">
+                <tbody><tr style="background: #f7fafc; border-bottom: 2px solid #e2e8f0">
+                  <th style="text-align: left; padding: 0.8rem">🤖 AI টুল</th>
+                  <th style="text-align: left; padding: 0.8rem">মূল কাজ</th>
+                  <th style="text-align: left; padding: 0.8rem">মূল্য</th>
+                  <th style="text-align: left; padding: 0.8rem">লিংক</th>
+                </tr>
+                <tr style="border-bottom: 1px solid #edf2f7">
+                  <td style="padding: 0.8rem; font-weight: 600">ChatGPT</td>
+                  <td style="padding: 0.8rem">লেখা, কোড, বিশ্লেষণ, অনুবাদ</td>
+                  <td style="padding: 0.8rem; color: #2e7d32">ফ্রি (GPT-4o)</td>
+                  <td style="padding: 0.8rem"><a href="https://chat.openai.com" target="_blank">chat.openai.com</a></td>
+                </tr>
+                <tr style="border-bottom: 1px solid #edf2f7">
+                  <td style="padding: 0.8rem; font-weight: 600">Google Gemini</td>
+                  <td style="padding: 0.8rem">রিসার্চ, Google Drive/Docs Integration</td>
+                  <td style="padding: 0.8rem; color: #2e7d32">ফ্রি</td>
+                  <td style="padding: 0.8rem"><a href="https://gemini.google.com" target="_blank">gemini.google.com</a></td>
+                </tr>
+                <tr style="border-bottom: 1px solid #edf2f7">
+                  <td style="padding: 0.8rem; font-weight: 600">Canva AI</td>
+                  <td style="padding: 0.8rem">ডিজাইন, Text to Image, Background Remove</td>
+                  <td style="padding: 0.8rem; color: #2e7d32">ফ্রি</td>
+                  <td style="padding: 0.8rem"><a href="https://www.canva.com" target="_blank">canva.com</a></td>
+                </tr>
+                <tr style="border-bottom: 1px solid #edf2f7">
+                  <td style="padding: 0.8rem; font-weight: 600">Gamma.app</td>
+                  <td style="padding: 0.8rem">AI দিয়ে Presentation তৈরি</td>
+                  <td style="padding: 0.8rem; color: #2e7d32">ফ্রি (Limited)</td>
+                  <td style="padding: 0.8rem"><a href="https://gamma.app" target="_blank">gamma.app</a></td>
+                </tr>
+                <tr style="border-bottom: 1px solid #edf2f7">
+                  <td style="padding: 0.8rem; font-weight: 600">Notion AI</td>
+                  <td style="padding: 0.8rem">নোট, Project Management, AI Writing</td>
+                  <td style="padding: 0.8rem; color: #ff9800">Paid Add-on</td>
+                  <td style="padding: 0.8rem"><a href="https://www.notion.so" target="_blank">notion.so</a></td>
+                </tr>
+                <tr style="border-bottom: 1px solid #edf2f7">
+                  <td style="padding: 0.8rem; font-weight: 600">Grammarly</td>
+                  <td style="padding: 0.8rem">ইংরেজি Writing উন্নত করা</td>
+                  <td style="padding: 0.8rem; color: #2e7d32">ফ্রি (Basic)</td>
+                  <td style="padding: 0.8rem"><a href="https://www.grammarly.com" target="_blank">grammarly.com</a></td>
+                </tr>
+                <tr>
+                  <td style="padding: 0.8rem; font-weight: 600">Microsoft Copilot</td>
+                  <td style="padding: 0.8rem">Word, Excel, PowerPoint-এ AI সাহায্য</td>
+                  <td style="padding: 0.8rem; color: #2e7d32">ফ্রি (Bing)</td>
+                  <td style="padding: 0.8rem"><a href="https://copilot.microsoft.com" target="_blank">copilot.microsoft.com</a></td>
+                </tr>
+              </tbody></table>
+              <div style="background: #f0f4c3; padding: 1rem; border-radius: 6px; margin-bottom: 1.5rem">
+                <strong>⚡ Prompt Engineering — ৩টি Golden Rule:</strong>
+                <ol style="margin-top: 0.5rem; margin-bottom: 0; padding-left: 1.5rem">
+                  <li><strong>Role দিন:</strong> "তুমি একজন অভিজ্ঞ HR Manager হিসেবে..."</li>
+                  <li><strong>Context দিন:</strong> পরিস্থিতি ও উদ্দেশ্য ব্যাখ্যা করুন</li>
+                  <li><strong>Format বলুন:</strong> "Bullet points-এ দাও" বা "৫টি উদাহরণসহ"</li>
+                </ol>
+              </div>
+              <div class="video-grid">
+                <a href="https://www.youtube.com/watch?v=bG6dUjPXxe4" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/bG6dUjPXxe4/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-bn">🇧🇩 বাংলা</div>
+                    <div class="duration-badge">22:19</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">ChatGPT Full Bangla Tutorial — Complete Course</div>
+                    <div class="channel-name">Rayhan Tanjim</div>
+                    <div class="view-count">250K Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=Gaf_jCnA6mc" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/Gaf_jCnA6mc/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-en">🇺🇸 English</div>
+                    <div class="duration-badge">27:51</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">ChatGPT Tutorial for Beginners — Complete Guide</div>
+                    <div class="channel-name">Charlie Chang</div>
+                    <div class="view-count">4.6M Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=LrVw2LtJsYw" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/LrVw2LtJsYw/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-en">🇺🇸 English</div>
+                    <div class="duration-badge">2:52:10</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Artificial Intelligence Full Course (Free) — Master AI</div>
+                    <div class="channel-name">The iScale</div>
+                    <div class="view-count">1.1M Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=yFU003t-cTg" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/yFU003t-cTg/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-en">🇺🇸 English</div>
+                    <div class="duration-badge">18:30</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">50+ Best AI Tools for Productivity in 2026</div>
+                    <div class="channel-name">Pynade Devs</div>
+                    <div class="view-count">674K Views</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Digital Marketing -->
+          <div id="digital-marketing" class="phase-block advanced-card">
+            <div class="phase-header">
+              <h3 class="phase-title">📣 Digital Marketing — ডিজিটাল মার্কেটিং</h3>
+              <div class="badges"><span class="badge" style="background: var(--advanced)">⭐⭐⭐⭐⭐ Demand</span></div>
+            </div>
+            <div class="phase-body">
+              <div class="info-box" style="background-color: #e8f5e9; border-color: #4caf50">
+                <strong>Why Learn:</strong> Digital Marketing জানলে যেকোনো ব্যবসা, Startup, বা চাকরিতে বাড়তি সুবিধা পাবেন। বাংলাদেশে এর চাহিদা দ্রুত বাড়ছে।
+              </div>
+              <ul class="topic-list">
+                <li><span class="topic-icon">📘</span> Social Media Marketing (Facebook, Instagram, LinkedIn)</li>
+                <li><span class="topic-icon">🔍</span> SEO বেসিকস (Search Engine Optimization) — Google-এ র‍্যাংক করা</li>
+                <li><span class="topic-icon">📝</span> Content Marketing — Blog, Video, Infographic</li>
+                <li><span class="topic-icon">📧</span> Email Marketing — Newsletter ও Campaign</li>
+                <li><span class="topic-icon">📊</span> Google Analytics বেসিকস — Website Traffic বোঝা</li>
+                <li><span class="topic-icon">💰</span> Facebook Ads বেসিকস — Paid Advertising</li>
+                <li><span class="topic-icon">🎓</span> Google Digital Garage — ফ্রি সার্টিফিকেট</li>
+              </ul>
+              <div class="pro-tip">
+                <div class="pro-tip-icon">⚡</div>
+                <div><strong>শুরু করুন এখানে:</strong> <a href="https://digital.garage.google.com" target="_blank">Google Digital Garage</a> — সম্পূর্ণ ফ্রি Digital Marketing কোর্স ও Certificate। বাংলাদেশে HR-রা এই Certificate চেনেন।</div>
+              </div>
+              <div class="video-grid">
+                <a href="https://www.youtube.com/watch?v=GWHLosmkyjM" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/GWHLosmkyjM/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-bn">🇧🇩 বাংলা</div>
+                    <div class="duration-badge">45:00</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">ডিজিটাল মার্কেটিং শেখার Step by Step গাইড</div>
+                    <div class="channel-name">Bangla Tutorial</div>
+                    <div class="view-count">Bangla Tutorial</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=nU-IIXBWlS4" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/nU-IIXBWlS4/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-en">🇺🇸 English</div>
+                    <div class="duration-badge">4:02:06</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Digital Marketing Full Course 2024</div>
+                    <div class="channel-name">Simplilearn</div>
+                    <div class="view-count">3.2M Views</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cybersecurity -->
+          <div id="cybersecurity" class="phase-block advanced-card">
+            <div class="phase-header">
+              <h3 class="phase-title">🔐 Cybersecurity — অনলাইন নিরাপত্তা Advanced</h3>
+              <div class="badges"><span class="badge" style="background: #c62828">⭐⭐⭐⭐ High Growth</span></div>
+            </div>
+            <div class="phase-body">
+              <div class="info-box" style="background-color: #fce4ec; border-color: #e91e63">
+                <strong>২০২৬ সালে Cybersecurity বিশেষজ্ঞের চাহিদা সর্বোচ্চ বাড়ছে।</strong> এমনকি Basic Cybersecurity জানাটাও যেকোনো IT চাকরিতে আপনাকে এগিয়ে রাখবে।
+              </div>
+              <ul class="topic-list">
+                <li><span class="topic-icon">🛡️</span> Network Security বেসিকস — Firewall, VPN কীভাবে কাজ করে</li>
+                <li><span class="topic-icon">🔍</span> Ethical Hacking পরিচিতি — হ্যাকার কীভাবে ভাবে</li>
+                <li><span class="topic-icon">🔒</span> Data Privacy &amp; GDPR — ডেটা সুরক্ষার আইন</li>
+                <li><span class="topic-icon">🎣</span> Social Engineering — Phishing, Spear Phishing, Pretexting চেনা</li>
+                <li><span class="topic-icon">🐛</span> Malware Types — Virus, Ransomware, Spyware</li>
+                <li><span class="topic-icon">💰</span> Bug Bounty Program — কোম্পানির দুর্বলতা খুঁজে পুরস্কার পাওয়া</li>
+                <li><span class="topic-icon">🎓</span> Google Cybersecurity Certificate (Coursera — ৬ মাস, ফ্রি Audit)</li>
+              </ul>
+              <div class="video-grid">
+                <a href="https://www.youtube.com/watch?v=U_P23SqJaDc" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/U_P23SqJaDc/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-en">🇺🇸 English</div>
+                    <div class="duration-badge">3:00:00</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Cyber Security Full Course for Beginners</div>
+                    <div class="channel-name">Simplilearn</div>
+                    <div class="view-count">2.5M Views</div>
+                  </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=hXSFdwIOfnE" target="_blank" class="video-card">
+                  <div class="thumb-wrapper">
+                    <img src="https://img.youtube.com/vi/hXSFdwIOfnE/hqdefault.jpg" class="thumb-img" alt="Video Thumbnail" data-height-listener-added="true">
+                    <div class="lang-badge lang-en">🇺🇸 English</div>
+                    <div class="duration-badge">11:55:00</div>
+                    <div class="play-btn">▶</div>
+                  </div>
+                  <div class="video-info">
+                    <div class="video-title">Ethical Hacking in 12 Hours — Full Course</div>
+                    <div class="channel-name">freeCodeCamp</div>
+                    <div class="view-count">3.8M Views</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3: Keyboard Shortcuts -->
+        <section id="shortcuts">
+          <div class="section-header">
+            <h2 class="section-title">⌨️ কীবোর্ড শর্টকাট চিটশিট</h2>
+            <p style="color: #718096; margin-top: 0.5rem">এই শর্টকাটগুলো মুখস্ত করলে কাজের গতি ৩ গুণ বাড়বে!</p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+
+            <!-- Windows Shortcuts -->
+            <div>
+              <h3 style="margin-bottom: 1rem; color: var(--advanced); display: flex; align-items: center; gap: 8px;">🪟 Windows General Shortcuts</h3>
+              <table class="shortcut-table">
+                <thead>
+                  <tr>
+                    <th>শর্টকাট</th>
+                    <th>কাজ</th>
+                    <th>বিভাগ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>C</kbd></td><td>কপি</td><td>সাধারণ</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>V</kbd></td><td>পেস্ট</td><td>সাধারণ</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>X</kbd></td><td>কাট</td><td>সাধারণ</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>Z</kbd></td><td>Undo (পূর্বাবস্থা)</td><td>সাধারণ</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>Y</kbd></td><td>Redo (পুনরায়)</td><td>সাধারণ</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>S</kbd></td><td>সেভ</td><td>সাধারণ</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>A</kbd></td><td>সব সিলেক্ট</td><td>সাধারণ</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>F</kbd></td><td>খোঁজা (Find)</td><td>সাধারণ</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>P</kbd></td><td>প্রিন্ট</td><td>সাধারণ</td></tr>
+                  <tr><td><kbd>Alt</kbd> + <kbd>F4</kbd></td><td>প্রোগ্রাম বন্ধ</td><td>উইন্ডোজ</td></tr>
+                  <tr><td><kbd>Win</kbd> + <kbd>D</kbd></td><td>Desktop দেখান/লুকান</td><td>উইন্ডোজ</td></tr>
+                  <tr><td><kbd>Win</kbd> + <kbd>E</kbd></td><td>File Explorer খুলুন</td><td>উইন্ডোজ</td></tr>
+                  <tr><td><kbd>Win</kbd> + <kbd>L</kbd></td><td>কম্পিউটার লক করুন</td><td>উইন্ডোজ</td></tr>
+                  <tr><td><kbd>Win</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd></td><td>স্ক্রিনশট নিন</td><td>উইন্ডোজ</td></tr>
+                  <tr><td><kbd>Win</kbd> + <kbd>Tab</kbd></td><td>Task View</td><td>উইন্ডোজ</td></tr>
+                  <tr><td><kbd>Alt</kbd> + <kbd>Tab</kbd></td><td>উইন্ডো পরিবর্তন</td><td>উইন্ডোজ</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Browser Shortcuts -->
+            <div>
+              <h3 style="margin-bottom: 1rem; color: var(--phase1); display: flex; align-items: center; gap: 8px;">🌐 Browser Shortcuts (Chrome/Edge)</h3>
+              <table class="shortcut-table">
+                <thead>
+                  <tr>
+                    <th>শর্টকাট</th>
+                    <th>কাজ</th>
+                    <th>বিভাগ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>T</kbd></td><td>নতুন ট্যাব</td><td>ট্যাব</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>W</kbd></td><td>ট্যাব বন্ধ</td><td>ট্যাব</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>Tab</kbd></td><td>পরবর্তী ট্যাব</td><td>ট্যাব</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd></td><td>বন্ধ ট্যাব ফেরত</td><td>ট্যাব</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>L</kbd></td><td>Address Bar</td><td>নেভিগেশন</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>D</kbd></td><td>Bookmark যোগ</td><td>নেভিগেশন</td></tr>
+                  <tr><td><kbd>F5</kbd></td><td>পেজ Refresh</td><td>নেভিগেশন</td></tr>
+                  <tr><td><kbd>F12</kbd></td><td>Developer Tools</td><td>Advanced</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>+</kbd></td><td>Zoom In (বড়)</td><td>View</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>-</kbd></td><td>Zoom Out (ছোট)</td><td>View</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>0</kbd></td><td>Zoom Reset</td><td>View</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>H</kbd></td><td>History দেখুন</td><td>নেভিগেশন</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Word Shortcuts -->
+            <div>
+              <h3 style="margin-bottom: 1rem; color: #1976d2; display: flex; align-items: center; gap: 8px;">📝 MS Word Shortcuts</h3>
+              <table class="shortcut-table">
+                <thead>
+                  <tr>
+                    <th>শর্টকাট</th>
+                    <th>কাজ</th>
+                    <th>বিভাগ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>B</kbd></td><td>Bold (মোটা অক্ষর)</td><td>ফরম্যাট</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>I</kbd></td><td>Italic (বাঁকা)</td><td>ফরম্যাট</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>U</kbd></td><td>Underline (রেখা)</td><td>ফরম্যাট</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>K</kbd></td><td>Hyperlink যোগ</td><td>সন্নিবেশ</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>H</kbd></td><td>Find &amp; Replace</td><td>সম্পাদনা</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>Home</kbd></td><td>ডকুমেন্টের শুরু</td><td>নেভিগেশন</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>End</kbd></td><td>ডকুমেন্টের শেষ</td><td>নেভিগেশন</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>Enter</kbd></td><td>Page Break</td><td>লেআউট</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>&gt;</kbd></td><td>ফন্ট বড় করুন</td><td>ফরম্যাট</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>&lt;</kbd></td><td>ফন্ট ছোট করুন</td><td>ফরম্যাট</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>L</kbd></td><td>Left Align</td><td>লেআউট</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>E</kbd></td><td>Center Align</td><td>লেআউট</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Excel Shortcuts -->
+            <div>
+              <h3 style="margin-bottom: 1rem; color: #388e3c; display: flex; align-items: center; gap: 8px;">📊 MS Excel Shortcuts</h3>
+              <table class="shortcut-table">
+                <thead>
+                  <tr>
+                    <th>শর্টকাট</th>
+                    <th>কাজ</th>
+                    <th>বিভাগ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>;</kbd></td><td>আজকের তারিখ</td><td>ডেটা</td></tr>
+                  <tr><td><kbd>Alt</kbd> + <kbd>=</kbd></td><td>AutoSum</td><td>ফর্মুলা</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>Space</kbd></td><td>পুরো কলাম সিলেক্ট</td><td>সিলেকশন</td></tr>
+                  <tr><td><kbd>Shift</kbd> + <kbd>Space</kbd></td><td>পুরো রো সিলেক্ট</td><td>সিলেকশন</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd></td><td>Filter চালু/বন্ধ</td><td>ডেটা</td></tr>
+                  <tr><td><kbd>F2</kbd></td><td>সেল Edit মোড</td><td>সম্পাদনা</td></tr>
+                  <tr><td><kbd>F4</kbd></td><td>Reference Lock ($)</td><td>ফর্মুলা</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>1</kbd></td><td>Format Cells</td><td>ফরম্যাট</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>T</kbd></td><td>Table তৈরি</td><td>ডেটা</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>D</kbd></td><td>নিচে Fill Down</td><td>সম্পাদনা</td></tr>
+                  <tr><td><kbd>Ctrl</kbd> + <kbd>R</kbd></td><td>ডানে Fill Right</td><td>সম্পাদনা</td></tr>
+                  <tr><td><kbd>Alt</kbd> + <kbd>H</kbd> + <kbd>O</kbd> + <kbd>I</kbd></td><td>Column AutoFit</td><td>লেআউট</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Section 4: Free Tools -->
+        <section id="tools">
+          <div class="section-header">
+            <h2 class="section-title">🛠️ ফ্রি টুলস ও রিসোর্স</h2>
+            <p style="color: #718096; margin-top: 0.5rem">এই টুলগুলো ব্যবহার করে আপনি একজন Digital Professional হয়ে উঠতে পারবেন — সম্পূর্ণ ফ্রিতে!</p>
+          </div>
+
+          <div class="tools-grid">
+            <div class="tool-card">
+              <div class="tool-icon">✍️</div>
+              <div style="font-weight: 700; color: var(--advanced); margin-bottom: 0.5rem">TypingClub</div>
+              <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem">বিনামূল্যে টাইপিং শেখার সেরা সাইট। লক্ষ্য: ৩০+ WPM।</p>
+              <a href="https://www.typingclub.com" target="_blank" style="display: inline-block; padding: 0.5rem 1rem; background: #f0f4ff; color: var(--advanced); border-radius: 4px; font-size: 0.85rem; font-weight: 600; text-decoration: none">Visit →</a>
+            </div>
+            <div class="tool-card">
+              <div class="tool-icon">🎨</div>
+              <div style="font-weight: 700; color: var(--advanced); margin-bottom: 0.5rem">Canva</div>
+              <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem">প্রফেশনাল গ্রাফিক ডিজাইনের সেরা ফ্রি টুল। AI Features সহ।</p>
+              <a href="https://www.canva.com" target="_blank" style="display: inline-block; padding: 0.5rem 1rem; background: #f0f4ff; color: var(--advanced); border-radius: 4px; font-size: 0.85rem; font-weight: 600; text-decoration: none">Visit →</a>
+            </div>
+            <div class="tool-card">
+              <div class="tool-icon">🤖</div>
+              <div style="font-weight: 700; color: var(--advanced); margin-bottom: 0.5rem">ChatGPT</div>
+              <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem">AI দিয়ে লেখা, কোড, বিশ্লেষণ সব করুন। GPT-4o ফ্রি।</p>
+              <a href="https://chat.openai.com" target="_blank" style="display: inline-block; padding: 0.5rem 1rem; background: #f0f4ff; color: var(--advanced); border-radius: 4px; font-size: 0.85rem; font-weight: 600; text-decoration: none">Visit →</a>
+            </div>
+            <div class="tool-card">
+              <div class="tool-icon">🔮</div>
+              <div style="font-weight: 700; color: var(--advanced); margin-bottom: 0.5rem">Google Gemini</div>
+              <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem">Google-এর AI। Docs, Gmail ও Research-এ সাহায্য করে।</p>
+              <a href="https://gemini.google.com" target="_blank" style="display: inline-block; padding: 0.5rem 1rem; background: #f0f4ff; color: var(--advanced); border-radius: 4px; font-size: 0.85rem; font-weight: 600; text-decoration: none">Visit →</a>
+            </div>
+            <div class="tool-card">
+              <div class="tool-icon">📚</div>
+              <div style="font-weight: 700; color: var(--advanced); margin-bottom: 0.5rem">Google Digital Garage</div>
+              <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem">Digital Marketing ফ্রি কোর্স ও Certificate। CV-তে যোগ করুন।</p>
+              <a href="https://digital.garage.google.com" target="_blank" style="display: inline-block; padding: 0.5rem 1rem; background: #f0f4ff; color: var(--advanced); border-radius: 4px; font-size: 0.85rem; font-weight: 600; text-decoration: none">Visit →</a>
+            </div>
+            <div class="tool-card">
+              <div class="tool-icon">⌨️</div>
+              <div style="font-weight: 700; color: var(--advanced); margin-bottom: 0.5rem">Avro Keyboard</div>
+              <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem">সহজে বাংলা টাইপ করার সফটওয়্যার। ফ্রি ডাউনলোড।</p>
+              <a href="https://www.omicronlab.com/avro-keyboard.html" target="_blank" style="display: inline-block; padding: 0.5rem 1rem; background: #f0f4ff; color: var(--advanced); border-radius: 4px; font-size: 0.85rem; font-weight: 600; text-decoration: none">Download →</a>
+            </div>
+            <div class="tool-card">
+              <div class="tool-icon">🔐</div>
+              <div style="font-weight: 700; color: var(--advanced); margin-bottom: 0.5rem">Bitwarden</div>
+              <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem">ফ্রি ও নিরাপদ পাসওয়ার্ড ম্যানেজার। সব পাসওয়ার্ড নিরাপদ রাখুন।</p>
+              <a href="https://bitwarden.com" target="_blank" style="display: inline-block; padding: 0.5rem 1rem; background: #f0f4ff; color: var(--advanced); border-radius: 4px; font-size: 0.85rem; font-weight: 600; text-decoration: none">Visit →</a>
+            </div>
+            <div class="tool-card">
+              <div class="tool-icon">☁️</div>
+              <div style="font-weight: 700; color: var(--advanced); margin-bottom: 0.5rem">Google Workspace</div>
+              <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem">Docs, Sheets, Slides, Drive, Meet — সব ফ্রিতে পাবেন।</p>
+              <a href="https://workspace.google.com" target="_blank" style="display: inline-block; padding: 0.5rem 1rem; background: #f0f4ff; color: var(--advanced); border-radius: 4px; font-size: 0.85rem; font-weight: 600; text-decoration: none">Visit →</a>
+            </div>
+            <div class="tool-card">
+              <div class="tool-icon">🎓</div>
+              <div style="font-weight: 700; color: var(--advanced); margin-bottom: 0.5rem">Coursera</div>
+              <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem">বিশ্বের সেরা কোর্স। Google, IBM, Meta-র ফ্রি Certificate পান।</p>
+              <a href="https://www.coursera.org" target="_blank" style="display: inline-block; padding: 0.5rem 1rem; background: #f0f4ff; color: var(--advanced); border-radius: 4px; font-size: 0.85rem; font-weight: 600; text-decoration: none">Visit →</a>
+            </div>
+            <div class="tool-card">
+              <div class="tool-icon">📝</div>
+              <div style="font-weight: 700; color: var(--advanced); margin-bottom: 0.5rem">Notion</div>
+              <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem">Note-taking, Project Management ও AI Writing। ফ্রি Plan আছে।</p>
+              <a href="https://www.notion.so" target="_blank" style="display: inline-block; padding: 0.5rem 1rem; background: #f0f4ff; color: var(--advanced); border-radius: 4px; font-size: 0.85rem; font-weight: 600; text-decoration: none">Visit →</a>
+            </div>
+            <div class="tool-card">
+              <div class="tool-icon">🌐</div>
+              <div style="font-weight: 700; color: var(--advanced); margin-bottom: 0.5rem">Grammarly</div>
+              <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem">ইংরেজি লেখার মান উন্নত করুন। Grammar ও Style সংশোধন।</p>
+              <a href="https://www.grammarly.com" target="_blank" style="display: inline-block; padding: 0.5rem 1rem; background: #f0f4ff; color: var(--advanced); border-radius: 4px; font-size: 0.85rem; font-weight: 600; text-decoration: none">Visit →</a>
+            </div>
+            <div class="tool-card">
+              <div class="tool-icon">🎯</div>
+              <div style="font-weight: 700; color: var(--advanced); margin-bottom: 0.5rem">Khan Academy</div>
+              <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem">বিনামূল্যে Math, Science, Programming শেখার সেরা প্ল্যাটফর্ম।</p>
+              <a href="https://www.khanacademy.org" target="_blank" style="display: inline-block; padding: 0.5rem 1rem; background: #f0f4ff; color: var(--advanced); border-radius: 4px; font-size: 0.85rem; font-weight: 600; text-decoration: none">Visit →</a>
+            </div>
+          </div>
+
+          <!-- Certifications Box -->
+          <div style="background: linear-gradient(to right, #e8eaf6, #fff); padding: 2rem; border-radius: 8px; border-left: 5px solid var(--advanced); margin-top: 2rem">
+            <h3 style="margin-bottom: 1.5rem; color: var(--advanced)">🏆 চাকরির জন্য সেরা ফ্রি Certifications</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem">
+              <div style="background: white; padding: 1rem; border-radius: 6px; border: 1px solid #e2e8f0">
+                <div style="font-weight: 700; margin-bottom: 0.3rem">🔵 Google IT Support Certificate</div>
+                <div style="font-size: 0.85rem; color: #666">Coursera | ৬ মাস | ফ্রি Audit সম্ভব</div>
+              </div>
+              <div style="background: white; padding: 1rem; border-radius: 6px; border: 1px solid #e2e8f0">
+                <div style="font-weight: 700; margin-bottom: 0.3rem">📊 Microsoft Office Specialist (MOS)</div>
+                <div style="font-size: 0.85rem; color: #666">Microsoft | Excel/Word/PowerPoint Certificate</div>
+              </div>
+              <div style="background: white; padding: 1rem; border-radius: 6px; border: 1px solid #e2e8f0">
+                <div style="font-weight: 700; margin-bottom: 0.3rem">📣 Google Digital Marketing Certificate</div>
+                <div style="font-size: 0.85rem; color: #666">Google Digital Garage | ফ্রি সার্টিফিকেট</div>
+              </div>
+              <div style="background: white; padding: 1rem; border-radius: 6px; border: 1px solid #e2e8f0">
+                <div style="font-weight: 700; margin-bottom: 0.3rem">📘 Meta Social Media Marketing</div>
+                <div style="font-size: 0.85rem; color: #666">Coursera | Meta Certificate | ফ্রি Audit</div>
+              </div>
+              <div style="background: white; padding: 1rem; border-radius: 6px; border: 1px solid #e2e8f0">
+                <div style="font-weight: 700; margin-bottom: 0.3rem">📈 IBM Data Analyst Certificate</div>
+                <div style="font-size: 0.85rem; color: #666">Coursera | Data Analysis | ফ্রি Audit</div>
+              </div>
+              <div style="background: white; padding: 1rem; border-radius: 6px; border: 1px solid #e2e8f0">
+                <div style="font-weight: 700; margin-bottom: 0.3rem">🔐 Google Cybersecurity Certificate</div>
+                <div style="font-size: 0.85rem; color: #666">Coursera | ৬ মাস | ফ্রি Audit সম্ভব</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 5: Pro Tips -->
+        <section id="tips">
+          <div class="section-header">
+            <h2 class="section-title">💡 প্রো টিপস ও কৌশল</h2>
+            <p style="color: #718096; margin-top: 0.5rem">অভিজ্ঞ শিক্ষার্থীদের কাছ থেকে শেখা সেরা পরামর্শ</p>
+          </div>
+
+          <div style="background: white; border-radius: 12px; padding: 2rem; border-left: 5px solid #ffd700; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 2rem">
+            <ol style="font-size: 1.05rem; line-height: 2; margin: 0; padding-left: 1.5rem">
+              <li style="margin-bottom: 0.5rem">🎯 প্রতিদিন ২–৩ ঘণ্টা নিয়মিত শিখুন — Spaced Repetition পদ্ধতি সবচেয়ে কার্যকর</li>
+              <li style="margin-bottom: 0.5rem">📝 শেখা বিষয়গুলো Notion বা Google Docs-এ <strong>নিজের ভাষায়</strong> নোট করুন</li>
+              <li style="margin-bottom: 0.5rem">🔄 প্রতি ৩ দিন পর পুরনো বিষয় রিভিশন করুন — Forgetting Curve এড়ান</li>
+              <li style="margin-bottom: 0.5rem">👥 শেখা বিষয়গুলো অন্যকে শেখান — "The Feynman Technique" সবচেয়ে ভালো শেখার উপায়</li>
+              <li style="margin-bottom: 0.5rem">🏆 প্রতিটি পর্যায় শেষে একটি <strong>Portfolio Project</strong> করুন — Interview-এ দেখান</li>
+              <li style="margin-bottom: 0.5rem">❌ ভুল করতে ভয় পাবেন না — <kbd>Ctrl</kbd>+<kbd>Z</kbd> দিন এবং আবার চেষ্টা করুন!</li>
+              <li style="margin-bottom: 0.5rem">📱 YouTube-এ বাংলায় যেকোনো সমস্যার সমাধান পাওয়া যায় — আগে সার্চ করুন</li>
+              <li style="margin-bottom: 0.5rem">🌟 <strong>LinkedIn প্রোফাইল</strong> তৈরি করুন এবং প্রতিটি নতুন স্কিল সাথে সাথে যোগ করুন</li>
+              <li style="margin-bottom: 0.5rem">🚀 ১৫ দিনের রোডম্যাপ শেষেও থামবেন না — প্রতিদিন নতুন কিছু শেখার অভ্যাস রাখুন</li>
+              <li style="margin-bottom: 0.5rem">🎓 Google, Microsoft, Coursera-তে ফ্রি <strong>Certification</strong> নিন — CV-তে অবশ্যই যোগ করুন</li>
+              <li style="margin-bottom: 0.5rem">💡 সমস্যা হলে আগে Google করুন — ৯০% সমস্যার সমাধান অনলাইনে পাওয়া যায়</li>
+              <li>🔥 <strong>AI টুলগুলো শিখুন</strong> — AI আপনার চাকরি নেবে না, কিন্তু AI ব্যবহারকারী আপনার চাকরি নিতে পারে!</li>
+            </ol>
+          </div>
+
+          <!-- Study Schedule Suggestion -->
+          <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05)">
+            <h3 style="margin-bottom: 1.5rem; color: var(--advanced)">📅 প্রস্তাবিত দৈনিক পড়ার রুটিন</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem">
+              <div style="background: #e3f2fd; padding: 1rem; border-radius: 8px; text-align: center">
+                <div style="font-size: 1.5rem; margin-bottom: 0.5rem">🌅</div>
+                <h4 style="color: #1565c0; margin-bottom: 0.3rem">সকাল (৩০ মিনিট)</h4>
+                <p style="font-size: 0.85rem; color: #555">গতকালের বিষয় রিভিশন করুন। নতুন দিনের টার্গেট ঠিক করুন।</p>
+              </div>
+              <div style="background: #e8f5e9; padding: 1rem; border-radius: 8px; text-align: center">
+                <div style="font-size: 1.5rem; margin-bottom: 0.5rem">☀️</div>
+                <h4 style="color: #2e7d32; margin-bottom: 0.3rem">দুপুর (১.৫ ঘণ্টা)</h4>
+                <p style="font-size: 0.85rem; color: #555">মূল শেখার সময়। ভিডিও দেখুন এবং হাতে-কলমে প্র্যাকটিস করুন।</p>
+              </div>
+              <div style="background: #fff3e0; padding: 1rem; border-radius: 8px; text-align: center">
+                <div style="font-size: 1.5rem; margin-bottom: 0.5rem">🌙</div>
+                <h4 style="color: #e65100; margin-bottom: 0.3rem">রাত (১ ঘণ্টা)</h4>
+                <p style="font-size: 0.85rem; color: #555">Project কাজ করুন। নোট লিখুন। পরদিনের পরিকল্পনা করুন।</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer style="background: linear-gradient(to right, #1a202c, #2d3748); color: white; padding: 4rem 2rem; text-align: center; margin-top: 4rem">
+        <div style="font-size: 3rem; margin-bottom: 1rem">🚀</div>
+        <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: 700">কম্পিউটার ও ইন্টারনেট বেসিকস</h2>
+        <p style="font-size: 1.1rem; opacity: 0.8; margin-bottom: 0.5rem">Ultimate Guide for Jobs | Created by Anik</p>
+        <p style="font-size: 1rem; opacity: 0.6; margin-bottom: 2rem">Updated: April 2026</p>
+        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px; display: inline-block; max-width: 600px; margin-bottom: 2rem">
+          <p style="font-size: 1.1rem; font-style: italic; opacity: 0.9; margin: 0">"শেখার কোনো শেষ নেই — প্রতিদিন একটু একটু করে এগিয়ে যান 🚀"</p>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 1.5rem">
+          <a href="#roadmap" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem">📍 রোডম্যাপ</a>
+          <a href="#advanced" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem">💻 Advanced</a>
+          <a href="#shortcuts" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem">⌨️ Shortcuts</a>
+          <a href="#tools" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem">🛠️ Tools</a>
+          <a href="#tips" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem">💡 Tips</a>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.4">© 2026 কম্পিউটার ও ইন্টারনেট বেসিকস Guide | All rights reserved</p>
+      </footer>
+    </main>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" title="উপরে যান">⬆</a>
+  
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body></html>
